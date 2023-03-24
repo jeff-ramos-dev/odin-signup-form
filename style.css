@@ -3,3 +3,42 @@
     padding:0;
     box-sizing: border-box;
 }
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.sidebar {
+    background-image: url(./japan-arch.jpg);
+    background-size: cover;
+    background-position: center;
+    flex: 2;
+    display: grid;
+    place-items: center;
+}
+
+.hero {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+.photo-credit {
+    color: white;
+    place-self: end;
+}
+
+main {
+    flex: 3;
+}

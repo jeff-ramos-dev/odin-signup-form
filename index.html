@@ -8,7 +8,49 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>SIGN-UP FORM</h1>
-    
+    <div class="sidebar">
+        <div class="hero">
+            <img src="./shrine-logo.svg" alt="japanese shrine logo" class="logo">
+            <h1 class="hero-title">WatashiWeeb</h1>
+        </div>
+        <p class="photo-credit">Photo by <a href="https://unsplash.com/@_______life_?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Syuhei Inoue</a> on <a href="https://unsplash.com/photos/kaoHI0iHJPM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        </p>
+    </div>
+    <main>
+        <header class="header">
+            <h2 class="cta"></h2>
+        </header>
+        <form action="" method="get">
+            <div class="inputs">
+                <h2 class="form-title"></h2>
+                <div class="first-name">
+                    <label for="first-name">First Name</label>
+                    <input type="text" name="firstName" id="first-name">
+                </div>
+                <div class="last-name">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" name="lastName" id="last-name">
+                </div>
+                <div class="email">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="phone-number">
+                    <label for="phone-number">Phone Number</label>
+                    <input type="tel" name="phoneNumber" id="phone-number">
+                </div>
+                <div class="password">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="confirm">
+                    <label for="confirm">Confirm Password</label>
+                    <input type="password" name="confirm" id="confirm">
+                </div>
+            </div>
+            <button type="submit">Create Account</button>
+        </form>
+        <p class="login">Already have an account? <a href="">Log in</a></p>
+    </main>
 </body>
 </html>
