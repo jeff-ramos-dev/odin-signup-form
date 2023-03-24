@@ -23,10 +23,14 @@ body {
 .hero {
     width: 100%;
     background: rgba(0, 0, 0, 0.6);
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    color: #ccc;
 }
 
 .logo {
