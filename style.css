@@ -154,6 +154,7 @@ label {
 
 .error:focus {
     border: 1px solid red;
+    border-radius: 3px;
     outline: 1px solid red;
 }
 
@@ -163,6 +164,7 @@ label {
 
 .validated:focus {
     border: 1px solid green;
+    border-radius: 3px;
     outline: 1px solid green;
 }
 

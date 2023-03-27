@@ -7,12 +7,15 @@ const password = document.querySelector('.password')
 const passConfirm = document.querySelector('.confirm')
 
 const nameValidation = /[^A-Z-]/i
-const emailValidation = /\w*@\w*[.]\w*/
+const emailValidation = /\w+@\w+[.]\w{3}/
 
 // access error elements
 const firstNameError = document.querySelector('.first-name-error')
 const lastNameError = document.querySelector('.last-name-error')
 const emailError = document.querySelector('.email-error')
+const phoneError = document.querySelector('.phone-error')
+const passwordError = document.querySelector('.password-error')
+const confirmError = document.querySelector('.confirm-error')
 
 // add event listeners to each input
 firstName.addEventListener('input', e => checkFirstName(e))
@@ -113,5 +116,20 @@ function checkEmail(e) {
             emailError.textContent = ""
             email.classList.add("validated")
         }
+    }
+}
+
+function checkPhone(e) {
+    if (e.target.value.length > 0) {
+        if (phoneNumber.validity.valid) {
+            e.target.classList.remove("error")
+            e.target.classList.add("validated")
+        } else {
+            e.target.classList.remove("validated")
+            e.target.classList.add("error")
+            phoneError.textContent = "Please enter a valid phone number"
+        }
+    } else {
+        e.target.classList.remove("validated")
     }
 }
