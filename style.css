@@ -145,10 +145,24 @@ label {
     position: absolute;
     bottom: 0;
     font-size: 0.7rem;
-    color: red;
+    color: rgb(109, 34, 34);
 }
 .error {
     border: 1px solid red;
+}
+
+.error:focus {
+    border: 1px solid red;
+    outline: 1px solid red;
+}
+
+.validated {
+    border: 1px solid green;
+}
+
+.validated:focus {
+    border: 1px solid green;
+    outline: 1px solid green;
 }
 
 button {
