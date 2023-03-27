@@ -6,6 +6,7 @@
     --form-background-color: #7b7b7b;
     --focus-color: #325ab1;
 }
+
 * {
     margin: 0;
     padding:0;
@@ -179,4 +180,30 @@ button {
 .login { 
     color: white;
     margin: 2rem 0 0 2.2rem;
+}
+
+@media (max-width: 1200px) {
+    body {
+        flex-direction: column;
+    }
+
+    .header {
+        margin-top: 2rem;
+    }
+
+    .inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .form-title {
+        grid-column-start: 1;
+    }
+
+    .input:nth-of-type(even) {
+        grid-column-start: 1;
+    }
+
+    main {
+        padding-bottom: 4rem;
+    }
 }
