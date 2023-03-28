@@ -22,13 +22,13 @@ firstName.addEventListener('input', e => checkFirstName(e))
 
 lastName.addEventListener('input', e => checkLastName(e))
 
-email.addEventListener('input', e => checkEmail(e))
+email.addEventListener('input', () => checkEmail())
 
-phoneNumber.addEventListener('input', e => checkPhone(e))
+phoneNumber.addEventListener('input', () => checkPhone())
 
-password.addEventListener('input', e => checkPassword(e))
+password.addEventListener('input', () => checkPassword())
 
-passConfirm.addEventListener('input', e => checkConfirm(e))
+passConfirm.addEventListener('input', () => checkPassword())
 
 // write functions to determine the error message to display
 function checkFirstName(e) {
@@ -105,9 +105,9 @@ function checkLastName(e) {
     }
 }
 
-function checkEmail(e) {
-    if (e.target.value.length > 0) {
-        if (!emailValidation.test(e.target.value)) {
+function checkEmail() {
+    if (email.value.length > 0) {
+        if (!emailValidation.test(email.value)) {
             emailError.textContent = "Please enter a valid email"
             email.classList.remove("validated")
             email.classList.add("error")
@@ -119,17 +119,44 @@ function checkEmail(e) {
     }
 }
 
-function checkPhone(e) {
-    if (e.target.value.length > 0) {
+function checkPhone() {
+    if (phoneNumber.value.length > 0) {
         if (phoneNumber.validity.valid) {
-            e.target.classList.remove("error")
-            e.target.classList.add("validated")
+            phoneNumber.classList.remove("error")
+            phoneNumber.classList.add("validated")
+            phoneError.textContent = ""
         } else {
-            e.target.classList.remove("validated")
-            e.target.classList.add("error")
+            phoneNumber.classList.remove("validated")
+            phoneNumber.classList.add("error")
             phoneError.textContent = "Please enter a valid phone number"
         }
     } else {
-        e.target.classList.remove("validated")
+        phoneNumber.classList.remove("validated")
+    }
+}
+
+function checkPassword() {
+    if (password.value.length > 0) {
+        if (passConfirm.value === password.value) {
+            passConfirm.classList.remove("error")
+            passConfirm.classList.add("validated")
+            confirmError.textContent = ""
+        } else {
+            passConfirm.classList.remove("validated")
+            passConfirm.classList.add("error")
+            confirmError.textContent = "Passwords do not match"
+        }
+
+        if (password.value.length < 8) {
+            password.classList.remove("validated")
+            password.classList.add("error")
+            passwordError.textContent = "Password must be at least 8 characters"
+        } else {
+            password.classList.remove("error")
+            password.classList.add("validated")
+            passwordError.textContent = ""
+        }
+    } else {
+        password.classList.remove("validated")
     }
 }
